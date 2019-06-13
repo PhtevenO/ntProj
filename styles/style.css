@@ -4,8 +4,18 @@
 }
 
 @font-face {
+  font-family: Montserrat-medium;
+  src: url(/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
   font-family: Quicksand;
   src: url(../fonts/Quicksand/Quicksand-Regular.ttf);
+}
+
+@font-face {
+  font-family: Quicksand-bold;
+  src: url(/fonts/Quicksand/Quicksand-Bold.ttf);
 }
 
 html,
@@ -18,16 +28,40 @@ body {
   margin: 0;
 }
 
-header {
+body .gradient {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e8f1ff), to(#fafcff));
+  background: linear-gradient(#e8f1ff, #fafcff);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+body .white {
+  position: absolute;
+  z-index: -1;
+  top: 20%;
+  left: 30%;
+  background: white;
+  width: 70%;
+  height: 80%;
+  -webkit-border-top-left-radius: 50%;
+}
+
+nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
   height: 71px;
   padding: 0 10%;
+  z-index: 2;
+  background: white;
 }
 
-header ul {
+nav ul {
   height: 100%;
   list-style-type: none;
   margin: 0;
@@ -35,13 +69,13 @@ header ul {
   overflow: hidden;
 }
 
-header ul .logo {
+nav ul .logo {
   font-size: 22px;
-  font-family: Montserrat;
+  font-family: Quicksand-bold;
   color: #23231e;
 }
 
-header ul li {
+nav ul li {
   font-size: 18px;
   height: 100%;
   float: right;
@@ -51,15 +85,38 @@ header ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: Quicksand;
+  font-family: Montserrat-medium;
   font-weight: 600;
 }
 
-header ul li a {
+nav ul li a {
   color: #30333c;
   display: block;
   text-align: center;
   padding: 0 13px;
   text-decoration: none;
+}
+
+content {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+content #start {
+  height: 100%;
+}
+
+content #start h1 {
+  font-size: 50px;
+  color: #30333c;
+  font-family: Quicksand-bold;
+  padding-left: 100px;
+}
+
+content #offer {
+  height: 500px;
 }
 /*# sourceMappingURL=style.css.map */

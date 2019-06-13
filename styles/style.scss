@@ -9,8 +9,16 @@ $mainText: #70737c;
   src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 @font-face {
+  font-family: Montserrat-medium;
+  src: url(/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+@font-face {
   font-family: Quicksand;
   src: url(../fonts/Quicksand/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: Quicksand-bold;
+  src: url(/fonts/Quicksand/Quicksand-Bold.ttf);
 }
 //===================================
 
@@ -22,14 +30,35 @@ body {
 
 body {
   margin: 0;
+  .gradient {
+    background: linear-gradient(#e8f1ff, #fafcff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+  }
+  .white {
+    position: absolute;
+    z-index: -1;
+    top: 20%;
+    left: 30%;
+    background: white;
+    width: 70%;
+    height: 80%;
+    -webkit-border-top-left-radius: 50%;
+  }
 }
 
-header {
+nav {
   position: sticky;
   top: 0;
   left: 0;
   height: 71px;
   padding: 0 10%;
+  z-index: 2;
+  background: white;
   ul {
     height: 100%;
     list-style-type: none;
@@ -38,11 +67,8 @@ header {
     overflow: hidden;
     .logo {
       font-size: 22px;
-      font-family: Montserrat;
+      font-family: Quicksand-bold;
       color: #23231e;
-      a{
-        // color: #23231e;
-      }
     }
     li {
       font-size: 18px;
@@ -50,7 +76,7 @@ header {
       float: right;
       display: flex;
       align-items: center;
-      font-family: Quicksand;
+      font-family: Montserrat-medium;
       font-weight: 600;
       a {
         color: $headers;
@@ -59,7 +85,27 @@ header {
         padding: 0 13px;
         text-decoration: none;
       }
-     
     }
+  }
+}
+
+content {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  #start {
+    height: 100%;
+    h1 {
+      font-size: 50px;
+      color: $headers;
+      font-family: Quicksand-bold;
+      padding-left: 100px;
+    }
+  }
+  #offer {
+    height: 500px;
   }
 }
