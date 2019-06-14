@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -14,35 +14,93 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
+      <nav>
+          <ul>
+            <li  class="logo" style="float:left">
+              <a href="#">NTPROJECT</a></li>
+            <li><a href="#contacts">Kontaktai</a></li>
+            <li><a href="#news">Naujienos</a></li>
+            <li><a href="#offer">Pasiūlymai</a></li>
+            <li><a href="#">Pradžia</a></li>
+          </ul>
+        </nav>
         <div class='gradient'></div>
         <div class='white'></div>
-    <nav>
-      <ul>
-        <li href="#start" class="logo" style="float:left">
-          <a>NTPROJECT</a></li>
-        <li><a href="#contacts">Kontaktai</a></li>
-        <li><a href="#news">Naujienos</a></li>
-        <li><a href="#offer">Pasiūlymai</a></li>
-        <li><a href="#start">Pradžia</a></li>
-      </ul>
-    </nav>
+    
     <content>
        <div id="start">
         <h1>Lorem ipsum dolor </br> sit amet conset</h1>
-        <carrousel>
-
-        </carrousel>
+        <div id='itemsInside' class='carrousel'>
+        </div>
        </div>
        <div id="offer">
+         <div class="filter">
+            <div class="box">
+                <select>
+                  <option>Plotas</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+                  <option>Option 5</option>
+                </select>
+              </div>
+              <div class="box">
+                  <select>
+                    <option>Kambarių skaičius</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                  </select>
+                </div>
+                <div class="box">
+                    <select>
+                      <option>Langų orientacija</option>
+                      <option>Option 2</option>
+                      <option>Option 3</option>
+                      <option>Option 4</option>
+                      <option>Option 5</option>
+                    </select>
+                  </div>
+                  <div class="box">
+                      <select>
+                        <option>Baigtumas</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                      </select>
+                    </div>
+         </div>
+         <table>
+            <tr>
+              <th>Nuolaida</th>
+              <th>Namo nr.</th>
+              <th>Plotas m2</th>
+              <th>Kambarių skaičius</th>
+              <th>Langų orientacija</th>
+              <th>Baigtumas</th>
+            </tr>
+         </table>
 
        </div>
-       <div class="news">
+       <div id="news">
 
        </div>
        <div id="contacts">
+        <div class="people">
 
+        </div>
+        <form name='qForm' onsubmit="validateForm(event)" >
+          <h1>Sužinok apie</br> projektą daugiau</h1>
+          <input type='text' placeholder="Jūsų vardas" required`>
+          <input type='email' placeholder="El. Paštas" required`>
+          <input id='number' onkeypress='checkNumbers(event)' type='tel' placeholder="Telefono numeris" required>
+          <input  type='text' placeholder="Žinutė" required>
+          <label><input type="checkbox" required/>Lorem ipsum, dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore minim ntprojects@info.com</label>
+          <button type='submit'>Siųsti</button>
+        </form>
        </div>
-      <h1>main page</h1>
     </content>
     <footer>
 
