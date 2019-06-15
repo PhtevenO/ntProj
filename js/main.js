@@ -20,14 +20,14 @@ var carrouselItems = [
 ];
 
 var offerItems = [
-    {disc: '-5%', houseNumber: '1', area: '50.17', rooms: '3', window: 'Pietūs', finish: 'Pastatyta'},
+    {disc: '-5%', houseNumber: '1', area: '50.17', rooms: '1', window: 'Pietūs', finish: 'Pastatyta'},
     {disc: '', houseNumber: '2', area: '15', rooms: '3', window: 'Pietūs', finish: 'Pastatyta'},
-    {disc: '', houseNumber: '1', area: '20.17', rooms: '3', window: 'Šiaurė', finish: 'Statoma'},
-    {disc: '-15%', houseNumber: '1', area: '67', rooms: '3', window: 'Pietūs', finish: 'Pastatyta'},
-    {disc: '-10%', houseNumber: '2', area: '58.17', rooms: '3', window: 'Rytai', finish: 'Statoma'},
-    {disc: '', houseNumber: '1', area: '60.17', rooms: '3', window: 'Pietūs', finish: 'Pastatyta'},
+    {disc: '', houseNumber: '1', area: '20.17', rooms: '1', window: 'Šiaurė', finish: 'Statoma'},
+    {disc: '-15%', houseNumber: '1', area: '67', rooms: '2', window: 'Pietūs', finish: 'Pastatyta'},
+    {disc: '-10%', houseNumber: '2', area: '58.17', rooms: '4', window: 'Rytai', finish: 'Statoma'},
+    {disc: '', houseNumber: '1', area: '60.17', rooms: '2', window: 'Pietūs', finish: 'Pastatyta'},
     {disc: '', houseNumber: '21', area: '60.17', rooms: '3', window: 'Pietūs', finish: 'Statoma'},
-    {disc: '-15%', houseNumber: '8', area: '50.17', rooms: '3', window: 'Vakarai', finish: 'Pastatyta'},
+    {disc: '-15%', houseNumber: '8', area: '50.17', rooms: '1', window: 'Vakarai', finish: 'Pastatyta'},
     {disc: '-5%', houseNumber: '1', area: '50.17', rooms: '3', window: 'Pietūs', finish: 'Pastatyta'},
     {disc: '-5%', houseNumber: '1', area: '50.17', rooms: '3', window: 'Pietūs', finish: 'Statoma'},
 ]
@@ -37,7 +37,6 @@ console.log(carrouselItems);
 function createItems() {
   let i = 0;
   carrouselItems.forEach(element => {
-    console.log(element);
     let el = document.getElementById("itemsInside");
     let newEl = document.createElement("div");
     newEl.setAttribute("class", "itemWindow");
@@ -48,10 +47,8 @@ function createItems() {
     let headEl = document.createElement("h2");
     var headNode = document.createTextNode(element.title);
     headEl.appendChild(headNode);
-
     let textDiv = document.createElement("div");
     textDiv.setAttribute("class", "text");
-
     let textEl = document.createElement("p");
     var textNode = document.createTextNode(element.text);
     textEl.appendChild(textNode);
@@ -64,6 +61,33 @@ function createItems() {
   });
 }
 createItems();
+
+function createTableItems(){
+  offerItems.forEach(item => {
+    // console.log(Object.values(item));
+    let liEl = document.createElement('tr');
+    
+    Object.values(item).forEach(values =>{
+      console.log('random ' + values);
+      let val = '';
+      if (values == ''){
+        val = '-'
+      } else {
+        val = values;
+      }
+      let valueNode = document.createTextNode(val);
+      let liTd = document.createElement('td');
+      liTd.appendChild(valueNode);
+      liEl.appendChild(liTd);
+      
+    })
+    
+    document.getElementById('tableInfo').appendChild(liEl);
+    // console.log(item);
+  })
+}
+
+createTableItems();
 
 function checkNumbers(e) {
   let ch = String.fromCharCode(e.which);

@@ -94,6 +94,15 @@ nav {
   }
 }
 
+.mainHeader{
+  
+    font-size: 50px;
+    color: $headers;
+    font-family: Quicksand-bold;
+    padding-left: 100px;
+  
+}
+
 content {
   position: relative;
   top: 0;
@@ -103,12 +112,6 @@ content {
 
   #start {
     height: 100%;
-    h1 {
-      font-size: 50px;
-      color: $headers;
-      font-family: Quicksand-bold;
-      padding-left: 100px;
-    }
     .carrousel {
       padding: 0 45px;
       .itemWindow {
@@ -118,7 +121,7 @@ content {
         height: 600px;
         -webkit-border-radius: 0 120px 30px 30px;
         overflow: hidden;
-        box-shadow: 0 10px 50px #44477c;
+        box-shadow: 0 10px 50px rgba(68, 71, 124, 0.15);
         background: white;
         .image {
           height: 50%;
@@ -134,14 +137,18 @@ content {
           color: $headers;
           padding: 0 45px;
         }
-        p {
-          padding: 0 45px;
-          font-size: 16px;
-          max-height: 30%;
+        .text {
           overflow: hidden;
-          font-family: Montserrat-medium;
-          color: $mainText;
-          line-height: 32px;
+          height: 30%;
+          padding: 0 45px;
+          p {
+            font-size: 16px;
+            font-family: Montserrat-medium;
+            color: $mainText;
+            line-height: 32px;
+            text-overflow: ellipsis;
+            // white-space: nowrap;
+          }
         }
         .arrow {
           float: right;
@@ -152,32 +159,73 @@ content {
     }
   }
   #offer {
-    height: 600px;
     margin: 50px 45px;
     box-shadow: 0 10px 50px rgba(68, 71, 124, 0.15);
-    .filter{
-      padding: 60px 30px;
+    .filter {
+      padding: 60px 10px;
       font-family: Quicksand-bold;
       display: flex;
-      justify-content: space-evenly;
-    }
-    .box {
-      select {
+      justify-content: space-around;
+      button{
         background-color: $select;
         color: white;
-        padding: 12px;
-        width: auto;
+        padding: 12px 0;
+        width: 20%;
         border: none;
         border-radius: 30px;
         font-size: 20px;
-        -webkit-appearance: button;
         appearance: button;
         outline: none;
         font-family: Quicksand-bold;
-        text-align: center;
-        option {
-          padding: 30px;
+        // text-align: center;
+      }
+      .box {
+        select {
+          background-color: $select;
+          color: white;
+          padding: 12px;
+          width: auto;
           border: none;
+          border-radius: 30px;
+          font-size: 20px;
+          -webkit-appearance: button;
+          appearance: button;
+          outline: none;
+          font-family: Quicksand-bold;
+          text-align: center;
+        }
+      }
+    }
+    table {
+      width: 100%;
+      border-collapse:collapse;
+      // padding: 45px;
+      tbody{
+        tr{
+          // border-top: 1px solid lightgray;
+          padding-left: 20px;
+        }
+        tr:nth-child(odd){
+          background: #F7FAFF;
+        }
+      }
+      tr {
+        text-align: left;
+        
+        th {
+          font-size: 20px;
+          font-family: Montserrat-semiBold;
+          color: $headers;
+          width: calc(100% / 6);
+          padding: 20px 20px;
+        }
+        td{
+        
+          font-size: 20px;
+          color: $mainText;
+          font-family: Montserrat-medium;
+          padding: 20px 25px;
+          // border-top: 1px solid gray;
         }
       }
     }
@@ -196,12 +244,12 @@ content {
       justify-items: left;
       padding: 0 40px;
       grid-row-gap: 15px;
-      h1{
+      h1 {
         font-family: Quicksand-bold;
         font-size: 50px;
-        color :#6F88B1;
+        color: #6f88b1;
       }
-      input{
+      input {
         font-size: 20px;
         font-family: Montserrat-medium;
         padding: 10px 10px 10px 0;
@@ -211,20 +259,20 @@ content {
         border-right: none;
         transition: ease 0.3s;
       }
-      input:focus{
+      input:focus {
         border-bottom: 1px solid gray;
       }
-      label{
+      label {
         font-size: 18px;
         font-family: Montserrat-medium;
-        input{
-          border: 1px solid #6F88B1;
+        input {
+          border: 1px solid #6f88b1;
           width: 0;
         }
       }
-      button{
+      button {
         height: 60px;
-        border-radius:30px;
+        border-radius: 30px;
         font-size: 20px;
         font-family: Quicksand-bold;
         color: white;
