@@ -68,7 +68,6 @@ function createTableItems(){
     let liEl = document.createElement('tr');
     
     Object.values(item).forEach(values =>{
-      console.log('random ' + values);
       let val = '';
       if (values == ''){
         val = '-'
@@ -100,3 +99,48 @@ function validateForm(e) {
   console.log("valid");
   e.preventDefault();
 }
+var newsURL = 'https://api.unsplash.com/search/photos?query=lithuania&per_page=6&client_id=';
+var apiKey = '4af7c386b4e4a4581713e009d5ee422c726867c1b10067c14b3e66b0f114e61c';
+var X = 6;
+$.ajax({
+  url: newsURL+apiKey,
+  type: 'GET',
+  dataType: 'json',
+  headers: {
+   
+  },
+  contentType: 'application/json; charset=utf-8',
+  success: res=>{
+    console.log(res)
+    res.results.forEach(links =>{
+          console.log(links.urls['small']);
+          let square = document.createElement('div');
+          square.setAttribute('class', 'square');
+
+          let content = document.createElement('div');
+          content.setAttribute('class', 'content');
+
+          let image = document.createElement('img');
+          image.setAttribute('src', links.urls['small']);
+
+          let textDiv = document.createElement('div');
+          textDiv.setAttribute('class', 'text');
+
+          let text = document.createElement('h2');
+          let textNode = document.createTextNode(links.alt_description);
+          text.appendChild(textNode);
+          textDiv.appendChild(text);
+
+          square.appendChild(content);
+          content.appendChild(image);
+          content.appendChild(textDiv);
+
+          document.getElementById('newsContent').appendChild(square);
+
+        })
+  },
+  error: er =>{
+    console.log(er);
+  }
+})
+
