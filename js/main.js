@@ -16,6 +16,12 @@ var carrouselItems = [
     title: "Lorem ipsum dolor sit amet",
     text:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  },
+  {
+    picture: "/Images/tu-tu-322210-unsplash.png",
+    title: "Lorem ipsum dolor sit amet",
+    text:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
   }
 ];
 
@@ -120,6 +126,9 @@ $.ajax({
           let content = document.createElement('div');
           content.setAttribute('class', 'content');
 
+          let imgLink = document.createElement('a');
+          imgLink.setAttribute('href', links.links.html);
+
           let image = document.createElement('img');
           image.setAttribute('src', links.urls['small']);
 
@@ -132,7 +141,8 @@ $.ajax({
           textDiv.appendChild(text);
 
           square.appendChild(content);
-          content.appendChild(image);
+          imgLink.appendChild(image);
+          content.appendChild(imgLink);
           content.appendChild(textDiv);
 
           document.getElementById('newsContent').appendChild(square);
@@ -142,5 +152,23 @@ $.ajax({
   error: er =>{
     console.log(er);
   }
+});
+
+function carrouselFocus(act){  
+  var el2 = document.getElementsByClassName("itemWindow")[i];
+  el2.scrollIntoView();
+}
+
+document.getElementById('navbar-toggle').addEventListener('click', ()=>{
+  if (screen.width < 921){
+    let itemShow = document.getElementById('menuList');
+    itemShow.classList.toggle('displayItem');
+    document.querySelector('#menuList li a').addEventListener('click', ()=>{
+      itemShow.classList.toggle('displayItem');
+    })
+  }
+
 })
+
+
 

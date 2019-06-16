@@ -5,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title></title>
     <meta name="description" content="Nt Project" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/fontawesome-free-5.9.0-web/css/all.css">
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
       <nav>
-          <ul>
-            <li  class="logo" style="float:left">
-              <a href="#">NTPROJECT</a></li>
+          <div class="logo" style="float:left">
+              <a href="#">NTPROJECT</a>
+          </div>
+          <div id='navbar-toggle'>
+              <i class="fas fa-bars"></i>
+          </div>
+          
+          <ul id='menuList'>
             <li><a href="#contacts">Kontaktai</a></li>
             <li><a href="#news">Naujienos</a></li>
             <li><a href="#offer">Pasiūlymai</a></li>
@@ -24,9 +30,12 @@
     
     <content>
        <div id="start">
+          <button onclick="carrouselFocus('prev')" id='previous'><</button>
+          <button onclick="carrouselFocus('next')" id='next'>></button>
         <h1 class='mainHeader'>Lorem ipsum dolor </br> sit amet conset</h1>
         <div id='itemsInside' class='carrousel'>
           <!-- JS content -->
+          
         </div>
        </div>
        <div id="offer">
@@ -73,20 +82,23 @@
                       </select>
                     </div> -->
          </div>
-         <table>
-           <thead>
-              <tr>
-                  <th>Nuolaida</th>
-                  <th>Namo nr.</th>
-                  <th>Plotas m2</th>
-                  <th>Kambarių skaičius</th>
-                  <th>Langų orientacija</th>
-                  <th>Baigtumas</th>
-                </tr>
-           </thead>
-            <tbody id='tableInfo'>
-            </tbody>
-         </table>
+         <div class='table'>
+            <table>
+                <thead>
+                   <tr>
+                       <th>Nuolaida</th>
+                       <th>Namo nr.</th>
+                       <th>Plotas m2</th>
+                       <th>Kambarių skaičius</th>
+                       <th>Langų orientacija</th>
+                       <th>Baigtumas</th>
+                     </tr>
+                </thead>
+                 <tbody id='tableInfo'>
+                 </tbody>
+              </table>
+         </div>
+         
 
        </div>
        <div id="news">
@@ -97,7 +109,33 @@
        </div>
        <div id="contacts" class='mainShadow'>
         <div class="people">
-
+            
+          <div class="userCard">
+            <div class="image">
+                <img src='/Images/Users/3.png'>
+            </div>            
+            <h2 class = 'name'>Agnė Valentinaitė</h2>
+            <p class='email'>agne@ntprojects.com</p>
+            <p class='phone'>+370 62553454</p>
+          </div>
+          <div class="userCard">
+            
+              <div class="image">
+                  <img src='/Images/Users/1.png'>
+              </div>            
+              <h2 class = 'name'>Kamilė Henderson</h2>
+              <p class='email'>kamile@ntprojects.com</p>
+              <p class='phone'>+370 62553454</p>
+            </div>
+            <div class="userCard">
+                <div class="image">
+                    <img src='/Images/Users/2.png'>
+                </div>            
+                <h2 class = 'name'>Tomas Petkevičius</h2>
+                <p class='email'>tomas@ntprojects.com</p>
+                <p class='phone'>+370 62553454</p>
+              </div>
+              <div class="blue"></div>
         </div>
         <form name='qForm' onsubmit="validateForm(event)" >
           <h1>Sužinok apie</br> projektą daugiau</h1>
@@ -111,7 +149,21 @@
        </div>
     </content>
     <footer>
-
+      <div class="wrapper">
+          <h3>Apie statytoją</h3>
+          <p>Lorem ipsum</p>
+          <p>Dolor sit amet</p>
+      </div>
+      <div class="wrapper">
+          <h3>Saugumas</h3>
+          <p>Consectetur adipiscing</p>
+          <p>Sed do eiusmod</p>
+      </div>
+      <div class="wrapper">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+      </div>
+      
     </footer>
     <script src='/js/jquery.js'></script>
     <script src="/js/main.js" async defer></script>
